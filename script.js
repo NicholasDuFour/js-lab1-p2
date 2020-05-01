@@ -3,10 +3,12 @@
 
   const startGame= function(p) {
     p = prompt("Do you want to play a game?");
-    if (p.toLowerCase() === "yes") {
+    if (p.toLowerCase() === "yes" || p.toLowerCase() === "y") {
       let user = prompt("What is your character's name?");
+      alert("Great! Open up your browser's console to see the game unfold.");
       startCombat(user);
       } else {
+      alert("Oh well, maybe next time.  Goodbye!");
       console.log("Goodbye!");
     }
 
@@ -27,8 +29,8 @@
 
     while (userWins < 3 && grantWins < 1) {
 
-      let choice = prompt("Would you like to attack or quit?");
-      if (choice.toLowerCase() === "attack") {
+      let choice = prompt("Would you like to attack (a) or quit (q) ?");
+      if (choice.toLowerCase() === "attack" || choice.toLowerCase() === "a") {
 
           /*Health equations*/
 
@@ -56,7 +58,7 @@
         break;
       }
 
-      } else if (choice.toLowerCase() === "quit") {
+      } else if (choice.toLowerCase() === "quit" || choice.toLowerCase() === "q") {
         console.log("Thanks for playing!");
         break;
       }
